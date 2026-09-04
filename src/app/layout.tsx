@@ -22,7 +22,7 @@ const bebasNeue = Bebas_Neue({
 
 export const metadata: Metadata = {
     title: "House of Mambo | Bergen",
-    description: "Premium dans, klubbopplevelser og rytme i hjertet av Bergen.",
+    description: "Salsa On2 og mambo i Bergen – kurs, workshops, social dancing og et inkluderende dansemiljø.",
 };
 
 export default function RootLayout({

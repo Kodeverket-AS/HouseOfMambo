@@ -30,8 +30,149 @@ body {
     background-color: var(--color-background);
     color: var(--color-text-main);
     font-family: var(--font-inter);
+    margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+select {
+    color-scheme: dark;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.55rem;
+    color: color-mix(in srgb, var(--color-gold-champagne) 72%, transparent);
+    font-family: var(--font-montserrat);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.form-control {
+    width: 100%;
+    min-height: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    outline: none;
+    background: var(--color-background);
+    padding: 0.8rem 0.9rem;
+    color: var(--color-text-main);
+    font-size: 1rem;
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.form-control::placeholder {
+    color: color-mix(in srgb, var(--color-text-main) 25%, transparent);
+}
+
+.form-control:focus {
+    border-color: color-mix(in srgb, var(--color-gold-main) 75%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-gold-main) 10%, transparent);
+}
+
+.site-container {
+    width: min(100% - 2.5rem, 72rem);
+    margin-inline: auto;
+}
+
+.section-space {
+    padding-block: 6.5rem;
+}
+
+.section-eyebrow {
+    position: relative;
+    padding-left: 1.8rem;
+    color: color-mix(in srgb, var(--color-gold-champagne) 62%, transparent);
+    font-family: var(--font-montserrat);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.section-eyebrow::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1.15rem;
+    height: 1px;
+    content: "";
+    background: var(--color-gold-main);
+}
+
+.section-title {
+    margin-top: 0.4rem;
+    color: var(--color-gold-main);
+    font-family: var(--font-bebas);
+    font-size: clamp(2.35rem, 5vw, 3.55rem);
+    line-height: 1;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+}
+
+.card-title {
+    color: var(--color-gold-main);
+    font-family: var(--font-bebas);
+    font-size: 1.7rem;
+    line-height: 1;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+}
+
+.micro-value {
+    color: var(--color-gold-champagne);
+    font-family: var(--font-montserrat);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.social-link {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--color-gold-main) 45%, transparent);
+    border-radius: 9999px;
+    color: var(--color-gold-champagne);
+    font-family: var(--font-montserrat);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+    border-color: var(--color-gold-main);
+    outline: none;
+    background: var(--color-gold-main);
+    color: var(--color-background);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: var(--color-gold-main);
+    color: var(--color-background);
+}
+
+a,
+button,
+summary {
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Custom hjelpeklasser i Tailwind v4 syntaks */
@@ -52,12 +193,14 @@ body {
 
 @utility btn-primary {
     background-color: var(--color-gold-main);
+    border: 1px solid var(--color-gold-main);
     color: var(--color-background);
     font-family: var(--font-montserrat);
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: 0.15em;
-    padding: 0.75rem 2rem;
+    letter-spacing: 0.1em;
+    padding: 0.8rem 2rem;
+    font-size: 0.78rem;
     transition: all 300ms ease-in-out;
 
     &:hover {
@@ -66,20 +209,27 @@ body {
     }
 }
 
+@utility btn-small {
+    padding: 0.7rem 1.25rem;
+    font-size: 0.78rem;
+}
+
 @utility btn-secondary {
-    background-color: transparent;
-    border: 2px solid var(--color-gold-champagne);
-    color: var(--color-gold-champagne);
+    background-color: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: color-mix(in srgb, var(--color-text-main) 78%, transparent);
     font-family: var(--font-montserrat);
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: 0.15em;
-    padding: 0.75rem 2rem;
+    letter-spacing: 0.1em;
+    padding: 0.8rem 2rem;
+    font-size: 0.78rem;
     transition: all 300ms ease-in-out;
 
     &:hover {
-        background-color: var(--color-gold-champagne);
-        color: var(--color-background);
+        border-color: var(--color-gold-main);
+        background-color: color-mix(in srgb, var(--color-gold-main) 12%, var(--color-surface));
+        color: var(--color-gold-champagne);
     }
 }
 
@@ -90,5 +240,93 @@ body {
 
     @variant m {
         padding: 2rem;
+    }
+}
+
+@utility nav-link {
+    position: relative;
+    color: color-mix(in srgb, var(--color-text-main) 62%, transparent);
+    font-family: var(--font-montserrat);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    transition: color 200ms ease;
+
+    &::after {
+        position: absolute;
+        right: 0;
+        bottom: -0.55rem;
+        left: 0;
+        height: 1px;
+        content: "";
+        background: var(--color-gold-main);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 200ms ease;
+    }
+
+    &:hover,
+    &:focus-visible {
+        color: var(--color-gold-champagne);
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+
+@utility micro-label {
+    color: var(--color-gold-bronze);
+    font-family: var(--font-montserrat);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.hero-glow {
+    position: absolute;
+    z-index: -1;
+    top: 6rem;
+    right: -14rem;
+    width: 38rem;
+    height: 38rem;
+    border-radius: 9999px;
+    background: rgba(211, 157, 59, 0.1);
+    filter: blur(120px);
+    pointer-events: none;
+}
+
+@media (min-width: 768px) {
+    .site-container {
+        width: min(100% - 4rem, 72rem);
+    }
+}
+
+@media (max-width: 767px) {
+    .section-space {
+        padding-block: 4.5rem;
+    }
+}
+
+.mobile-menu[open] > summary {
+    border-color: rgba(211, 157, 59, 0.5);
+    background: var(--color-surface);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }
