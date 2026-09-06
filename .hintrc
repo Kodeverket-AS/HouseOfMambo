@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "color: color-mix(in srgb, var(--color-gold-champagne) 72%, transparent)",
+          "color: color-mix(in srgb, var(--color-text-main) 25%, transparent)",
+          "border-color: color-mix(in srgb, var(--color-gold-main) 75%, transparent)",
+          "color: color-mix(in srgb, var(--color-gold-champagne) 62%, transparent)",
+          "border: 1px solid color-mix(in srgb, var(--color-gold-main) 45%, transparent)",
+          "color: color-mix(in srgb, var(--color-text-main) 78%, transparent)",
+          "background-color: color-mix(in srgb, var(--color-gold-main) 12%, var(--color-surface))",
+          "color: color-mix(in srgb, var(--color-text-main) 62%, transparent)"
+        ]
+      }
+    ]
+  }
+}
