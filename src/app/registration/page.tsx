@@ -19,8 +19,8 @@ export default function RegistrationPage() {
         <main className="min-h-screen overflow-x-hidden bg-background">
             <header className="border-b border-white/8 bg-background/95">
                 <div className="site-container flex min-h-[4.75rem] items-center justify-between gap-4 py-3 m:min-h-[5.25rem]">
-                    <a href="/" aria-label="House of Mambo home" className="group shrink-0">
-                        <Image src="/images/house-of-mambo-logo.png" alt="House of Mambo Bergen" width={600} height={408} priority className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.025] m:h-14" />
+                    <a href="/" aria-label="House of Mambo home" className="group relative z-10 -ml-1 shrink-0 m:-ml-3 l:-ml-6 xl:-ml-24">
+                        <Image src="/images/house-of-mambo-logo.png" alt="House of Mambo Bergen" width={600} height={408} priority className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.025] m:h-20 l:h-24" />
                     </a>
                     <a href="/" className="btn-secondary btn-small text-center">← Home</a>
                 </div>
