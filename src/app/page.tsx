@@ -115,9 +115,9 @@ export default function Home() {
     return (
         <main id="home" className="min-h-screen overflow-x-hidden bg-background">
             <header className="sticky top-0 z-50 border-b border-white/8 bg-background/95 backdrop-blur-md">
-                <div className="site-container flex h-21 items-center justify-between">
+                <div className="site-container flex h-[4.75rem] items-center justify-between m:h-[5.25rem]">
                     <a href="#home" className="group shrink-0" aria-label="House of Mambo home">
-                        <Image src="/images/house-of-mambo-logo.png" alt="House of Mambo Bergen" width={600} height={408} priority className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.025] m:h-14" />
+                        <Image src="/images/house-of-mambo-logo.png" alt="House of Mambo Bergen" width={600} height={408} priority className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.025] m:h-14" />
                     </a>
 
                     <nav className="hidden items-center gap-8 l:flex" aria-label="Main navigation">
@@ -138,7 +138,7 @@ export default function Home() {
                             <span className="sr-only">Open navigation</span>
                             <span className="flex w-5 flex-col gap-1.5" aria-hidden="true"><span className="h-px w-full bg-current" /><span className="h-px w-full bg-current" /><span className="h-px w-full bg-current" /></span>
                         </summary>
-                        <nav className="absolute right-0 top-14 z-50 flex w-64 flex-col border border-white/10 bg-surface p-2 shadow-2xl" aria-label="Mobile navigation">
+                        <nav className="fixed inset-x-4 top-[5.25rem] z-50 flex max-h-[calc(100dvh-6.25rem)] flex-col overflow-y-auto border border-white/10 bg-surface p-2 shadow-2xl m:absolute m:inset-x-auto m:right-0 m:top-14 m:w-72" aria-label="Mobile navigation">
                             {navigation.map((item) => <a key={item.label} href={item.href} className="border-b border-white/6 px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-text-main/75 last:border-0 hover:bg-white/5 hover:text-gold-main">{item.label}</a>)}
                             <a href="/registration" className="btn-primary mt-2 text-center">Course sign-up</a>
                             <div className="mt-2 grid grid-cols-2 gap-2">
@@ -152,17 +152,17 @@ export default function Home() {
             <section className="relative isolate">
                 <div className="hero-glow" aria-hidden="true" />
                 <div className="site-container py-7 m:py-10 l:py-12">
-                    <div className="mb-10 flex flex-wrap items-center justify-between gap-3 border-b border-white/8 pb-3 text-xs font-semibold uppercase tracking-[0.14em] text-text-main/60">
+                    <div className="mb-8 grid gap-2 border-b border-white/8 pb-4 text-xs font-semibold uppercase leading-5 tracking-[0.12em] text-text-main/60 m:mb-10 m:flex m:flex-wrap m:items-center m:justify-between m:gap-3">
                         <span className="text-gold-bronze">◆ Inclusive salsa & mambo community · Bergen, Norway</span>
                         <span>Classes · workshops · social dancing</span>
                     </div>
 
-                    <div className="mb-10 flex flex-col justify-between gap-5 l:flex-row l:items-end">
+                    <div className="mb-8 flex flex-col justify-between gap-4 m:mb-10 l:flex-row l:items-end">
                         <div>
-                            <h1 className="title-primary text-[clamp(3.4rem,7vw,5.8rem)] leading-[0.86] tracking-[0.065em]">House of Mambo</h1>
+                            <h1 className="title-primary text-[clamp(3rem,15vw,5.8rem)] leading-[0.88] tracking-[0.045em] m:tracking-[0.065em]">House of Mambo</h1>
                             <p className="title-secondary mt-4 text-base m:text-xl">Bergen</p>
                         </div>
-                        <p className="micro-label pb-1 text-right text-gold-champagne/55">The Mambo is alive</p>
+                        <p className="micro-label pb-1 text-left text-gold-champagne/65 l:text-right">The Mambo is alive</p>
                     </div>
 
                     <div className="grid gap-5 l:grid-cols-[1.3fr_0.88fr_0.88fr] l:items-start">
@@ -171,8 +171,8 @@ export default function Home() {
                                 <span className="mb-6 block h-px w-12 bg-gold-main" />
                                 <p className="max-w-md text-base leading-7 text-text-main/72">An inclusive and inspiring community for Salsa On2 and mambo in Bergen. Learn the foundations, develop your musicality, grow through partnerwork, and become part of the social dance floor.</p>
                                 <div className="mt-7 grid max-w-md gap-3 sm:grid-cols-2">
-                                    <a href="#classes" className="btn-primary text-center">Explore classes</a>
-                                    <a href="/registration" className="btn-secondary text-center">Course sign-up</a>
+                                    <a href="#classes" className="btn-primary flex min-h-12 items-center justify-center text-center">Explore classes</a>
+                                    <a href="/registration" className="btn-secondary flex min-h-12 items-center justify-center text-center">Course sign-up</a>
                                 </div>
                             </div>
 
@@ -184,28 +184,28 @@ export default function Home() {
                         </div>
 
                         <figure className="group overflow-hidden border border-white/8 bg-surface shadow-[0_24px_70px_rgba(0,0,0,0.45)]">
-                            <div className="relative aspect-4/5 overflow-hidden bg-black">
+                            <div className="relative aspect-[4/5] overflow-hidden bg-black">
                                 <Image src="/mambo.dance.png" alt="Salsa dancers inside the House of Mambo club" fill loading="eager" fetchPriority="high" sizes="(max-width: 1023px) 100vw, 30vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.025]" />
-                                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-black/20" aria-hidden="true" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" aria-hidden="true" />
                                 <span className="absolute left-4 top-4 border border-gold-main/35 bg-black/75 px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-gold-champagne backdrop-blur-sm">Salsa On2</span>
                             </div>
                             <figcaption className="min-h-40 border-t border-white/8 p-5"><h3 className="card-title">Movement & connection</h3><p className="mt-3 text-base leading-7 text-text-main/70">Develop timing, musicality, body movement, and partner connection in a supportive training environment.</p></figcaption>
                         </figure>
 
                         <figure className="group overflow-hidden border border-white/8 bg-surface shadow-[0_24px_70px_rgba(0,0,0,0.45)]">
-                            <div className="relative aspect-4/5 overflow-hidden bg-black">
+                            <div className="relative aspect-[4/5] overflow-hidden bg-black">
                                 <Image src="/mambo-dance.png" alt="House of Mambo acoustic dance floor and lounge" fill sizes="(max-width: 1023px) 100vw, 30vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]" />
-                                <div className="absolute inset-0 bg-linear-to-t from-black/65 via-transparent to-black/20" aria-hidden="true" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/20" aria-hidden="true" />
                                 <span className="absolute left-4 top-4 border border-gold-main/35 bg-black/75 px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-gold-champagne backdrop-blur-sm">Community floor</span>
                             </div>
                             <figcaption className="min-h-40 border-t border-white/8 p-5"><h3 className="card-title">Learn, dance, belong</h3><p className="mt-3 text-base leading-7 text-text-main/70">Regular courses, weekend workshops, social dance parties, and showteams bring Bergen&apos;s mambo community together.</p></figcaption>
                         </figure>
                     </div>
 
-                    <div className="mt-9 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border border-white/8 bg-surface/65 px-4 py-3 text-xs font-semibold uppercase tracking-widest text-text-main/60">
+                    <div className="mt-9 flex flex-col items-start gap-4 border border-white/8 bg-surface/65 px-4 py-4 text-xs font-semibold uppercase leading-5 tracking-[0.1em] text-text-main/60 m:flex-row m:flex-wrap m:items-center m:justify-between m:gap-x-6 m:gap-y-3">
                         <span className="text-gold-bronze">● Follow the House of Mambo community:</span>
-                        <div className="flex flex-wrap gap-5">
-                            {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-gold-champagne transition-colors hover:text-gold-main"><SocialIcon platform={social.label} className="size-3.5" />{social.label} ↗</a>)}
+                        <div className="grid w-full grid-cols-2 gap-3 m:flex m:w-auto m:flex-wrap m:gap-5">
+                            {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 border border-white/8 px-3 text-gold-champagne transition-colors hover:text-gold-main m:min-h-0 m:border-0 m:px-0"><SocialIcon platform={social.label} className="size-4" />{social.label} ↗</a>)}
                         </div>
                         <span>Classes ◆ Workshops ◆ Socials ◆ Showteams</span>
                     </div>
@@ -230,12 +230,12 @@ export default function Home() {
 
                 <div className="grid gap-5 m:grid-cols-3">
                     {offerings.map((item) => (
-                        <article key={item.title} className="flex min-h-88 flex-col border border-white/7 bg-surface/70 p-6">
+                        <article key={item.title} className="flex flex-col border border-white/7 bg-surface/70 p-5 m:min-h-[22rem] m:p-6">
                             <div className="flex items-center justify-between"><span className="border border-gold-bronze/25 bg-black/30 px-2.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-gold-champagne">{item.schedule}</span><span className="text-gold-champagne/75" aria-hidden="true">{item.icon}</span></div>
                             <h3 className="card-title mt-8 text-3xl">{item.title}</h3>
                             <p className="micro-label mt-2 text-gold-champagne/60">{item.subtitle}</p>
                             <p className="mt-4 text-base leading-7 text-text-main/70">{item.description}</p>
-                            <div className="mt-auto flex items-center justify-between border-t border-white/8 pt-5"><a href="/registration" className="micro-label text-gold-main transition-colors hover:text-gold-champagne">{item.action} →</a><span className="text-xs uppercase tracking-widest text-text-main/55">{item.meta}</span></div>
+                            <div className="mt-auto flex items-center justify-between border-t border-white/8 pt-5"><a href="/registration" className="micro-label text-gold-main transition-colors hover:text-gold-champagne">{item.action} →</a><span className="text-xs uppercase tracking-[0.1em] text-text-main/55">{item.meta}</span></div>
                         </article>
                     ))}
                 </div>
@@ -247,11 +247,11 @@ export default function Home() {
                     </div>
                     <div>
                         {timetable.map((item) => (
-                            <div key={item.title} className="grid gap-3 border-b border-white/8 py-5 last:border-0 m:grid-cols-[5rem_1fr_auto_auto] m:items-center">
+                            <div key={item.title} className="grid grid-cols-[1fr_auto] gap-x-4 gap-y-3 border-b border-white/8 py-5 last:border-0 m:grid-cols-[5rem_1fr_auto_auto] m:items-center">
                                 <time className="font-bebas text-2xl tracking-[0.04em] text-gold-main">{item.time}</time>
-                                <div><h4 className="text-sm font-semibold uppercase tracking-widest text-text-main/85">{item.title}</h4><p className="mt-1 text-sm leading-6 text-text-main/60">{item.detail}</p></div>
-                                <span className="text-xs uppercase leading-5 tracking-widest text-text-main/60">{item.place}</span>
-                                <span className="justify-self-start border border-gold-bronze/30 px-2 py-1 text-xs font-semibold uppercase tracking-widest text-gold-champagne m:justify-self-end">{item.status}</span>
+                                <div className="col-span-2 m:col-span-1"><h4 className="text-sm font-semibold uppercase leading-6 tracking-[0.08em] text-text-main/85">{item.title}</h4><p className="mt-1 text-sm leading-6 text-text-main/60">{item.detail}</p></div>
+                                <span className="col-span-2 text-xs uppercase leading-5 tracking-[0.08em] text-text-main/60 m:col-span-1">{item.place}</span>
+                                <span className="col-start-2 row-start-1 justify-self-end border border-gold-bronze/30 px-2 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-gold-champagne m:col-start-auto m:row-start-auto">{item.status}</span>
                             </div>
                         ))}
                     </div>
@@ -266,7 +266,7 @@ export default function Home() {
                             <h2 className="font-bebas mt-2 text-4xl tracking-[0.055em] text-gold-main uppercase">Ready to join?</h2>
                             <p className="mt-3 max-w-2xl text-base leading-7 text-text-main/70">Choose your course and send your details on our dedicated registration page. The form is ready for the Google Sheets connection when you want to add it.</p>
                         </div>
-                        <a href="/registration" className="btn-primary inline-flex min-h-12 items-center justify-center text-center">Open registration →</a>
+                        <a href="/registration" className="btn-primary inline-flex min-h-12 w-full items-center justify-center text-center l:w-auto">Open registration →</a>
                     </div>
                 </div>
             </section>
@@ -277,10 +277,10 @@ export default function Home() {
                         <div>
                             <SectionHeading eyebrow="More than weekly classes" title="The Bergen community" />
                             <p className="mt-6 max-w-xl text-base leading-7 text-text-main/58">House of Mambo creates an inclusive and inspiring community for Salsa On2 and mambo in Bergen. Regular courses are supported by weekend workshops, social dance parties, and showteams where dancers can keep developing together.</p>
-                            <figure className="relative mt-7 aspect-16/10 overflow-hidden border border-white/8 bg-black">
+                            <figure className="relative mt-7 aspect-[4/5] overflow-hidden border border-white/8 bg-black sm:aspect-[16/10]">
                                 <Image src="/mambo.dance.png" alt="The House of Mambo grand ballroom and lounge" fill sizes="(max-width: 1023px) 100vw, 50vw" className="object-cover object-[center_58%]" />
-                                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-transparent to-black/10" aria-hidden="true" />
-                                <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/10" aria-hidden="true" />
+                                <figcaption className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-3 p-5 sm:flex-row sm:items-end sm:justify-between">
                                     <div><p className="micro-label text-gold-champagne/70">Tuesday & Wednesday classes</p><p className="font-bebas text-xl tracking-[0.08em] text-text-main">Forandringshuset V13, 5017 Bergen</p></div>
                                     <p className="font-bebas text-2xl tracking-[0.04em] text-gold-main">Salsa On2</p>
                                 </figcaption>
@@ -304,15 +304,15 @@ export default function Home() {
                             </article>
 
                             <article className="border border-white/8 bg-surface/70 p-6">
-                                <div className="flex items-center justify-between"><p className="micro-label">Current course information</p><p className="text-xs uppercase tracking-widest text-text-main/55">Autumn 2026</p></div>
-                                <div className="mt-5 flex items-center justify-between border-b border-white/8 pb-4"><div><h4 className="text-sm font-semibold uppercase tracking-[0.09em] text-text-main/85">Course period</h4><p className="mt-1 text-sm leading-6 text-text-main/60">Monday 24 August — Wednesday 28 October</p></div><span className="micro-label text-gold-main">8 weeks</span></div>
-                                <div className="mt-4 flex items-center justify-between"><div><h4 className="text-sm font-semibold uppercase tracking-[0.09em] text-text-main/85">Before class</h4><p className="mt-1 text-sm leading-6 text-text-main/60">Please arrive 5 minutes before your class starts.</p></div><span className="micro-label text-gold-main">Welcome</span></div>
+                                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"><p className="micro-label">Current course information</p><p className="text-xs uppercase tracking-[0.1em] text-text-main/55">Autumn 2026</p></div>
+                                <div className="mt-5 flex flex-col gap-3 border-b border-white/8 pb-4 sm:flex-row sm:items-center sm:justify-between"><div><h4 className="text-sm font-semibold uppercase tracking-[0.09em] text-text-main/85">Course period</h4><p className="mt-1 text-sm leading-6 text-text-main/60">Monday 24 August — Wednesday 28 October</p></div><span className="micro-label text-gold-main">8 weeks</span></div>
+                                <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><div><h4 className="text-sm font-semibold uppercase tracking-[0.09em] text-text-main/85">Before class</h4><p className="mt-1 text-sm leading-6 text-text-main/60">Please arrive 5 minutes before your class starts.</p></div><span className="micro-label text-gold-main">Welcome</span></div>
                             </article>
 
                             <blockquote className="border border-white/8 bg-surface/70 p-7 text-base italic leading-7 text-text-main/72">
                                 <span className="mb-2 block font-serif text-3xl not-italic text-gold-main/45">“</span>
                                 The Mambo is alive. Come learn, dance, and help us build Bergen&apos;s On2 community together.
-                                <footer className="mt-5 flex items-center justify-between gap-5 not-italic">
+                                <footer className="mt-5 flex flex-col items-start gap-4 not-italic sm:flex-row sm:items-center sm:justify-between">
                                     <cite className="micro-label">— House of Mambo Bergen</cite>
                                     <Image src="/images/house-of-mambo-logo.png" alt="House of Mambo Bergen" width={600} height={408} className="h-auto w-16 shrink-0 object-contain m:w-20" />
                                 </footer>
@@ -323,7 +323,7 @@ export default function Home() {
             </section>
 
             <section id="contact" className="site-container section-space pb-10">
-                <div className="grid gap-6 border border-white/8 bg-[#252525] p-6 m:p-8 l:grid-cols-[1.15fr_0.85fr] l:items-center">
+                    <div className="grid gap-6 border border-white/8 bg-[#252525] p-5 m:p-8 l:grid-cols-[1.15fr_0.85fr] l:items-center">
                     <div><p className="micro-label">Stay connected</p><h2 className="font-bebas text-3xl tracking-[0.055em] text-text-main">Follow classes, workshops & socials</h2><p className="mt-2 text-base leading-7 text-text-main/68">Follow House of Mambo for registration announcements, weekly course updates, workshops, social dance parties, and community highlights.</p></div>
                     <div className="grid gap-3 sm:grid-cols-2">
                         {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="btn-primary inline-flex min-h-12 items-center justify-center gap-2 text-center"><SocialIcon platform={social.label} className="size-5" />{social.label} ↗</a>)}
@@ -340,13 +340,13 @@ export default function Home() {
                         </div>
                         {footerGroups.map((group) => <div key={group.title}><h3 className="micro-label text-gold-main">{group.title}</h3><ul className="mt-4 space-y-2">{group.items.map((item) => <li key={item} className="text-sm leading-6 text-text-main/60">{item}</li>)}</ul></div>)}
                     </div>
-                    <div className="flex flex-col justify-between gap-4 py-7 text-xs font-semibold uppercase tracking-widest text-text-main/55 m:flex-row">
+                    <div className="flex flex-col justify-between gap-4 py-7 text-xs font-semibold uppercase tracking-[0.1em] text-text-main/55 m:flex-row">
                         <p>© 2026 House of Mambo Bergen AS. All rights reserved.</p>
                         <div className="flex flex-wrap gap-5"><a href="/registration" className="hover:text-gold-champagne">Course sign-up</a>{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-gold-champagne"><SocialIcon platform={social.label} className="size-3" />{social.label}</a>)}</div>
                     </div>
                     <div className="flex flex-col justify-between gap-3 border-t border-white/8 pt-7 text-text-main/55 m:flex-row m:items-end">
-                        <div><p className="font-bebas text-xl tracking-[0.04em] text-gold-main">House of Mambo</p><p className="mt-1 text-xs leading-5 tracking-widest">Bergen, Norway · Salsa On2 · Classes · Workshops · Community</p></div>
-                        <p className="text-xs uppercase leading-5 tracking-widest">© 2026 House of Mambo Bergen. All rights reserved.</p>
+                        <div><p className="font-bebas text-xl tracking-[0.04em] text-gold-main">House of Mambo</p><p className="mt-1 text-xs leading-5 tracking-[0.1em]">Bergen, Norway · Salsa On2 · Classes · Workshops · Community</p></div>
+                        <p className="text-xs uppercase leading-5 tracking-[0.1em]">© 2026 House of Mambo Bergen. All rights reserved.</p>
                     </div>
                 </footer>
             </section>

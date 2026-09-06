@@ -309,7 +309,16 @@ summary {
 
 @media (max-width: 767px) {
     .section-space {
-        padding-block: 4.5rem;
+        padding-block: 3.75rem;
+    }
+
+    .site-container {
+        width: min(100% - 2rem, 72rem);
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding-inline: 1.25rem;
     }
 }
 
