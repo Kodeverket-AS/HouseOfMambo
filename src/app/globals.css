@@ -14,7 +14,7 @@
     /*  Gull og aksenter */
     --color-gold-main: #d39d3b;
     --color-gold-champagne: #f0d6ad;
-    --color-gold-bronze: #8f6327;
+    --color-gold-bronze: #bd8734;
 
     /*  Ekstra aksent */
     --color-mambo-red: #d92b43;
@@ -33,6 +33,36 @@ body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.skip-link {
+    position: fixed;
+    z-index: 100;
+    top: 0.75rem;
+    left: 0.75rem;
+    transform: translateY(-200%);
+    border: 2px solid var(--color-background);
+    background: var(--color-gold-main);
+    padding: 0.75rem 1rem;
+    color: var(--color-background);
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+:where(a, button, input, select, textarea, summary):focus-visible {
+    outline: 3px solid var(--color-gold-champagne);
+    outline-offset: 4px;
+}
+
+#main-content:focus {
+    outline: none;
+}
+
+.site-logo {
+    max-width: min(38vw, 9rem);
 }
 
 button,
@@ -77,6 +107,18 @@ select {
 .form-control:focus {
     border-color: color-mix(in srgb, var(--color-gold-main) 75%, transparent);
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-gold-main) 10%, transparent);
+}
+
+.form-control[aria-invalid="true"] {
+    border-color: var(--color-mambo-red);
+}
+
+.form-error {
+    margin-top: 0.5rem;
+    color: #ff8fa0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
 }
 
 .site-container {
@@ -309,13 +351,23 @@ summary {
 
 @media (max-width: 767px) {
     .section-space {
-        padding-block: 4.5rem;
+        padding-block: 3.75rem;
+    }
+
+    .site-container {
+        width: min(100% - 2rem, 72rem);
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding-inline: 1.25rem;
     }
 }
 
-.mobile-menu[open] > summary {
-    border-color: rgba(211, 157, 59, 0.5);
-    background: var(--color-surface);
+@media (min-width: 1024px) {
+    .site-logo {
+        max-width: 11rem;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {

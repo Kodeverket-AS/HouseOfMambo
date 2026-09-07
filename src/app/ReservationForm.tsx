@@ -21,52 +21,87 @@ const danceRoles = ["Leader", "Follower", "Both", "Not sure yet"];
 
 export default function ReservationForm() {
     const [showPreviewNotice, setShowPreviewNotice] = useState(false);
+    const [errors, setErrors] = useState<Record<string, string>>({});
 
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
+        const form = event.currentTarget;
+        const data = new FormData(form);
+        const nextErrors: Record<string, string> = {};
+
+        if (!String(data.get("fullName") ?? "").trim()) nextErrors.fullName = "Enter your full name.";
+        const email = String(data.get("email") ?? "").trim();
+        if (!email) nextErrors.email = "Enter your email address.";
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) nextErrors.email = "Enter a valid email address.";
+        if (!String(data.get("phone") ?? "").trim()) nextErrors.phone = "Enter your phone number.";
+        if (!data.get("course")) nextErrors.course = "Choose a course.";
+        if (!data.get("experience")) nextErrors.experience = "Choose your experience level.";
+        if (!data.get("danceRole")) nextErrors.danceRole = "Choose a preferred dance role.";
+        if (!data.get("consent")) nextErrors.consent = "You must agree before registering.";
+
+        setErrors(nextErrors);
+        setShowPreviewNotice(false);
+        if (Object.keys(nextErrors).length > 0) {
+            requestAnimationFrame(() => form.querySelector<HTMLElement>("[aria-invalid='true']")?.focus());
+            return;
+        }
         setShowPreviewNotice(true);
     }
 
+    const errorProps = (name: string) => ({
+        "aria-invalid": errors[name] ? true as const : undefined,
+        "aria-describedby": errors[name] ? `${name}-error` : undefined,
+    });
+
+    const fieldError = (name: string) => errors[name] ? <p id={`${name}-error`} className="form-error">{errors[name]}</p> : null;
+
     return (
-        <form onSubmit={handleSubmit} className="border border-white/8 bg-[#202020] p-5 m:p-8">
+        <form onSubmit={handleSubmit} noValidate className="border border-white/8 bg-[#202020] p-5 m:p-8">
+            {Object.keys(errors).length > 0 && <div className="mb-6 border-l-4 border-mambo-red bg-mambo-red/10 p-4 text-base leading-7 text-text-main" role="alert"><strong>Please correct the highlighted fields.</strong></div>}
             <div className="grid gap-5 sm:grid-cols-2">
                 <div className="sm:col-span-2">
                     <label className="form-label" htmlFor="fullName">Full name</label>
-                    <input className="form-control" id="fullName" name="fullName" type="text" autoComplete="name" required placeholder="Your full name" />
+                    <input className="form-control" id="fullName" name="fullName" type="text" autoComplete="name" required placeholder="Your full name" {...errorProps("fullName")} />
+                    {fieldError("fullName")}
                 </div>
 
                 <div>
                     <label className="form-label" htmlFor="registrationEmail">Email address</label>
-                    <input className="form-control" id="registrationEmail" name="email" type="email" autoComplete="email" required placeholder="name@example.com" />
+                    <input className="form-control" id="registrationEmail" name="email" type="email" autoComplete="email" required placeholder="name@example.com" {...errorProps("email")} />
+                    {fieldError("email")}
                 </div>
 
                 <div>
                     <label className="form-label" htmlFor="phone">Phone number</label>
-                    <input className="form-control" id="phone" name="phone" type="tel" autoComplete="tel" required placeholder="+47 000 00 000" />
+                    <input className="form-control" id="phone" name="phone" type="tel" autoComplete="tel" required placeholder="+47 000 00 000" {...errorProps("phone")} />
+                    {fieldError("phone")}
                 </div>
 
                 <div className="sm:col-span-2">
                     <label className="form-label" htmlFor="course">Course</label>
-                    <select className="form-control" id="course" name="course" required defaultValue="">
+                    <select className="form-control" id="course" name="course" required defaultValue="" {...errorProps("course")}>
                         <option value="" disabled>Select a course</option>
                         {courses.map((course) => <option key={course} value={course}>{course}</option>)}
                     </select>
+                    {fieldError("course")}
                 </div>
 
                 <div>
                     <label className="form-label" htmlFor="experience">Salsa experience</label>
-                    <select className="form-control" id="experience" name="experience" required defaultValue="">
+                    <select className="form-control" id="experience" name="experience" required defaultValue="" {...errorProps("experience")}>
                         <option value="" disabled>Select your experience</option>
                         {experienceLevels.map((level) => <option key={level} value={level}>{level}</option>)}
                     </select>
+                    {fieldError("experience")}
                 </div>
 
                 <div>
                     <label className="form-label" htmlFor="danceRole">Preferred dance role</label>
-                    <select className="form-control" id="danceRole" name="danceRole" required defaultValue="">
+                    <select className="form-control" id="danceRole" name="danceRole" required defaultValue="" {...errorProps("danceRole")}>
                         <option value="" disabled>Select a role</option>
                         {danceRoles.map((role) => <option key={role} value={role}>{role}</option>)}
                     </select>
+                    {fieldError("danceRole")}
                 </div>
 
                 <div className="sm:col-span-2">
@@ -76,9 +111,10 @@ export default function ReservationForm() {
             </div>
 
             <label className="mt-6 flex cursor-pointer items-start gap-3 text-base leading-7 text-text-main/70">
-                <input className="mt-1 size-4 shrink-0 accent-gold-main" name="consent" type="checkbox" required />
-                <span>I agree that House of Mambo may use these details to contact me about courses and registration.</span>
+                <input className="mt-1 size-5 shrink-0 accent-gold-main" name="consent" type="checkbox" required {...errorProps("consent")} />
+                <span>I agree that House of Mambo may use these details to contact me about courses and registration. Read our <a href="/privacy" className="text-gold-champagne underline decoration-gold-main/60 underline-offset-4">privacy information</a>.</span>
             </label>
+            {fieldError("consent")}
 
             <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <button className="btn-primary min-h-12" type="submit">Register interest</button>

@@ -32,10 +32,13 @@ export default function RootLayout({
 }>) {
     return (
         <html
-            lang='no'
+            lang='en'
             className={`${inter.variable} ${montserrat.variable} ${bebasNeue.variable} h-full antialiased`}
         >
-            <body className='min-h-full flex flex-col'>{children}</body>
+            <body className='min-h-full flex flex-col'>
+                <a className="skip-link" href="#main-content">Skip to main content</a>
+                {children}
+            </body>
         </html>
     );
 }
