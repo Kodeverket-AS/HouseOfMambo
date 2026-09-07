@@ -165,7 +165,7 @@ export default function Home() {
                         <p className="micro-label pb-1 text-left text-gold-champagne/65 l:text-right">The Mambo is alive</p>
                     </div>
 
-                    <div className="grid gap-5 l:grid-cols-[1.3fr_0.88fr_0.88fr] l:items-start">
+                    <div className="grid gap-5 l:grid-cols-[1.3fr_0.88fr_0.88fr] l:items-stretch">
                         <div className="flex min-h-full flex-col justify-between gap-8 pr-0 l:pr-3">
                             <div>
                                 <span className="mb-6 block h-px w-12 bg-gold-main" />
@@ -183,22 +183,22 @@ export default function Home() {
                             </dl>
                         </div>
 
-                        <figure className="group overflow-hidden border border-white/8 bg-surface shadow-[0_24px_70px_rgba(0,0,0,0.45)]">
-                            <div className="relative aspect-[4/5] overflow-hidden bg-black">
+                        <figure className="group flex h-full flex-col overflow-hidden border border-white/8 bg-surface shadow-[0_24px_70px_rgba(0,0,0,0.45)]">
+                            <div className="relative aspect-[4/5] shrink-0 overflow-hidden bg-black">
                                 <Image src="/mambo.dance.png" alt="Salsa dancers inside the House of Mambo club" fill loading="eager" fetchPriority="high" sizes="(max-width: 1023px) 100vw, 30vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.025]" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" aria-hidden="true" />
                                 <span className="absolute left-4 top-4 border border-gold-main/35 bg-black/75 px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-gold-champagne backdrop-blur-sm">Salsa On2</span>
                             </div>
-                            <figcaption className="min-h-40 border-t border-white/8 p-5"><h3 className="card-title">Movement & connection</h3><p className="mt-3 text-base leading-7 text-text-main/70">Develop timing, musicality, body movement, and partner connection in a supportive training environment.</p></figcaption>
+                            <figcaption className="flex min-h-40 flex-1 flex-col border-t border-white/8 p-5"><h3 className="card-title">Movement & connection</h3><p className="mt-3 text-base leading-7 text-text-main/70">Develop timing, musicality, body movement, and partner connection in a supportive training environment.</p></figcaption>
                         </figure>
 
-                        <figure className="group overflow-hidden border border-white/8 bg-surface shadow-[0_24px_70px_rgba(0,0,0,0.45)]">
-                            <div className="relative aspect-[4/5] overflow-hidden bg-black">
+                        <figure className="group flex h-full flex-col overflow-hidden border border-white/8 bg-surface shadow-[0_24px_70px_rgba(0,0,0,0.45)]">
+                            <div className="relative aspect-[4/5] shrink-0 overflow-hidden bg-black">
                                 <Image src="/mambo-dance.png" alt="House of Mambo acoustic dance floor and lounge" fill sizes="(max-width: 1023px) 100vw, 30vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/20" aria-hidden="true" />
                                 <span className="absolute left-4 top-4 border border-gold-main/35 bg-black/75 px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-gold-champagne backdrop-blur-sm">Community floor</span>
                             </div>
-                            <figcaption className="min-h-40 border-t border-white/8 p-5"><h3 className="card-title">Learn, dance, belong</h3><p className="mt-3 text-base leading-7 text-text-main/70">Regular courses, weekend workshops, social dance parties, and showteams bring Bergen&apos;s mambo community together.</p></figcaption>
+                            <figcaption className="flex min-h-40 flex-1 flex-col border-t border-white/8 p-5"><h3 className="card-title">Learn, dance, belong</h3><p className="mt-3 text-base leading-7 text-text-main/70">Regular courses, weekend workshops, social dance parties, and showteams bring Bergen&apos;s mambo community together.</p></figcaption>
                         </figure>
                     </div>
 
