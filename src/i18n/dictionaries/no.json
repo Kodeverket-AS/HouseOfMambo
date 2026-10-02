@@ -16,6 +16,7 @@
     "navigation": [
         { "label": "Kurs", "href": "#classes" },
         { "label": "Arrangementer", "href": "#events" },
+        { "label": "Kalender", "href": "#calendar" },
         { "label": "Klubben", "href": "#club" },
         { "label": "Om oss", "href": "#about" },
         { "label": "Kontakt", "href": "#contact" }
@@ -183,6 +184,23 @@
             "companyCopyright": "© 2026 House of Mambo Bergen AS. Alle rettigheter forbeholdt.",
             "brandLine": "Bergen · Salsa On2 · Kurs · Workshops · Fellesskap"
         }
+    },
+    "calendar": {
+        "eyebrow": "Hva skjer",
+        "title": "Kalender",
+        "intro": "Kurs, workshops, socials og showteam – her ser du hva som skjer i House of Mambo framover.",
+        "sampleNotice": "Eksempelkalender: arrangementene under er fiktive. Den ekte kalenderen kobles på snart.",
+        "openInGoogle": "Åpne i Google Kalender",
+        "iframeTitle": "House of Mambo-kalender",
+        "types": { "social": "Social", "workshop": "Workshop", "course": "Kurs", "show": "Showteam" },
+        "sampleEvents": [
+            { "start": "2026-10-09T21:00:00+02:00", "end": "2026-10-10T01:00:00+02:00", "type": "social", "title": "Mambo Night: Social", "place": "Forandringshuset V13" },
+            { "start": "2026-10-17T12:00:00+02:00", "end": "2026-10-17T16:00:00+02:00", "type": "workshop", "title": "Workshop: Shines og musikalitet med Alberto", "place": "Forandringshuset V13" },
+            { "start": "2026-10-24T18:00:00+02:00", "end": "2026-10-24T20:00:00+02:00", "type": "show", "title": "Showteam: åpen prøvetrening", "place": "Bergen Internasjonale Kultursenter" },
+            { "start": "2026-10-28T19:00:00+01:00", "end": "2026-10-28T22:00:00+01:00", "type": "course", "title": "Siste kurskveld og avslutningssocial", "place": "Forandringshuset V13" },
+            { "start": "2026-11-06T21:00:00+01:00", "end": "2026-11-07T01:00:00+01:00", "type": "social", "title": "Salsa On2 Social", "place": "Forandringshuset V13" },
+            { "start": "2026-11-14T11:00:00+01:00", "end": "2026-11-14T15:00:00+01:00", "type": "workshop", "title": "Helgeworkshop: pardans-intensiv med Elias", "place": "Bergen Internasjonale Kultursenter" }
+        ]
     },
     "registration": {
         "meta": {

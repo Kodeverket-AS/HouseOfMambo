@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { languageAlternates, ogLocale } from "@/i18n/config";
 import { format, getDictionary } from "@/i18n/dictionaries";
+import CalendarSection from "./CalendarSection";
 import LanguageSwitcher from "./LanguageSwitcher";
 import MobileMenu from "./MobileMenu";
 import { getLocale } from "./locale";
@@ -64,7 +65,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                         <Image src="/images/house-of-mambo-logo.webp" alt={common.logoAlt} width={600} height={408} priority sizes="(max-width: 767px) 82px, (max-width: 1023px) 118px, 142px" className="site-logo h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.025] m:h-20 l:h-24" />
                     </a>
 
-                    <nav className="hidden items-center gap-8 l:flex" aria-label={home.mainNavLabel}>
+                    <nav className="hidden items-center gap-6 l:flex xl:gap-8" aria-label={home.mainNavLabel}>
                         {dict.navigation.map((item) => <a key={item.label} href={item.href} className="nav-link">{item.label}</a>)}
                     </nav>
 
@@ -190,6 +191,8 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                     </div>
                 </div>
             </section>
+
+            <CalendarSection lang={lang} t={dict.calendar} />
 
             <section className="border-y border-white/7 bg-[#0d0d0d]">
                 <div className="site-container py-12 m:py-16">

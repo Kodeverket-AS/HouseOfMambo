@@ -16,6 +16,7 @@
     "navigation": [
         { "label": "Classes", "href": "#classes" },
         { "label": "Events", "href": "#events" },
+        { "label": "Calendar", "href": "#calendar" },
         { "label": "The club", "href": "#club" },
         { "label": "About", "href": "#about" },
         { "label": "Contact", "href": "#contact" }
@@ -183,6 +184,23 @@
             "companyCopyright": "© 2026 House of Mambo Bergen AS. All rights reserved.",
             "brandLine": "Bergen, Norway · Salsa On2 · Classes · Workshops · Community"
         }
+    },
+    "calendar": {
+        "eyebrow": "What's on",
+        "title": "Calendar",
+        "intro": "Classes, workshops, socials and showteams – see what's coming up at House of Mambo.",
+        "sampleNotice": "Sample calendar: the events below are fictional. The real calendar will be connected soon.",
+        "openInGoogle": "Open in Google Calendar",
+        "iframeTitle": "House of Mambo calendar",
+        "types": { "social": "Social", "workshop": "Workshop", "course": "Class", "show": "Showteam" },
+        "sampleEvents": [
+            { "start": "2026-10-09T21:00:00+02:00", "end": "2026-10-10T01:00:00+02:00", "type": "social", "title": "Mambo Night: Social", "place": "Forandringshuset V13" },
+            { "start": "2026-10-17T12:00:00+02:00", "end": "2026-10-17T16:00:00+02:00", "type": "workshop", "title": "Workshop: Shines & musicality with Alberto", "place": "Forandringshuset V13" },
+            { "start": "2026-10-24T18:00:00+02:00", "end": "2026-10-24T20:00:00+02:00", "type": "show", "title": "Showteam: open trial session", "place": "Bergen Internasjonale Kultursenter" },
+            { "start": "2026-10-28T19:00:00+01:00", "end": "2026-10-28T22:00:00+01:00", "type": "course", "title": "Last class & closing social", "place": "Forandringshuset V13" },
+            { "start": "2026-11-06T21:00:00+01:00", "end": "2026-11-07T01:00:00+01:00", "type": "social", "title": "Salsa On2 Social", "place": "Forandringshuset V13" },
+            { "start": "2026-11-14T11:00:00+01:00", "end": "2026-11-14T15:00:00+01:00", "type": "workshop", "title": "Weekend workshop: partnerwork intensive with Elias", "place": "Bergen Internasjonale Kultursenter" }
+        ]
     },
     "registration": {
         "meta": {
