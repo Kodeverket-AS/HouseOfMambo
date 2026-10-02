@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { SocialIcon } from "./social";
 
 type MenuLink = { label: string; href: string };
 type MenuLabels = { open: string; close: string; label: string; courseSignup: string };
@@ -41,7 +42,7 @@ export default function MobileMenu({ navigation, socialLinks, signupHref, labels
                 <nav id="mobile-navigation" className="fixed inset-x-4 top-[5.25rem] z-50 flex max-h-[calc(100dvh-6.25rem)] flex-col overflow-y-auto border border-white/10 bg-surface p-2 shadow-2xl m:absolute m:inset-x-auto m:right-0 m:top-14 m:w-72" aria-label={labels.label}>
                     {navigation.map((item) => <a key={item.label} href={item.href} onClick={() => setOpen(false)} className="border-b border-white/6 px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-text-main/75 last:border-0 hover:bg-white/5 hover:text-gold-main">{item.label}</a>)}
                     <a href={signupHref} onClick={() => setOpen(false)} className="btn-primary mt-2 text-center">{labels.courseSignup}</a>
-                    <div className="mt-2 grid grid-cols-2 gap-2">{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="flex items-center justify-center border border-white/10 px-3 py-3 text-center text-sm font-semibold uppercase tracking-[0.09em] text-gold-champagne">{social.label}</a>)}</div>
+                    <div className="mt-2 grid grid-cols-2 gap-2">{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="flex min-h-12 items-center justify-center gap-2 border border-gold-main/60 px-3 py-3 text-center text-sm font-semibold uppercase tracking-[0.09em] text-gold-champagne hover:bg-gold-main hover:text-background"><SocialIcon platform={social.label} className="size-5" />{social.label}</a>)}</div>
                 </nav>
             )}
         </div>

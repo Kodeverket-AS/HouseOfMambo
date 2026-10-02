@@ -4,6 +4,7 @@
         "homeAria": "House of Mambo home",
         "logoAlt": "House of Mambo Bergen",
         "courseSignup": "Course sign-up",
+        "newTab": "(opens in a new tab)",
         "socialAria": "House of Mambo on {platform}",
         "privacy": "Privacy",
         "copyright": "© 2026 House of Mambo Bergen. All rights reserved.",
@@ -137,6 +138,7 @@
             "imageEyebrow": "Tuesday & Wednesday classes",
             "imageAddress": "Forandringshuset V13, 5017 Bergen",
             "imageBadge": "Salsa On2",
+            "imageSocialCta": "Follow us on Instagram",
             "features": [
                 { "label": "Training", "title": "Weekly On2 courses", "text": "Beginner, improver, intermediate, and open-level solo work." },
                 { "label": "Community", "title": "Workshops & socials", "text": "Weekend training, social dance parties, and showteams." }

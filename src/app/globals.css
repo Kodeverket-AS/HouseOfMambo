@@ -181,10 +181,10 @@ select {
 
 .social-link {
     display: grid;
-    width: 2rem;
-    height: 2rem;
+    width: 2.75rem;
+    height: 2.75rem;
     place-items: center;
-    border: 1px solid color-mix(in srgb, var(--color-gold-main) 45%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-gold-main) 75%, transparent);
     border-radius: 9999px;
     color: var(--color-gold-champagne);
     font-family: var(--font-montserrat);

@@ -4,6 +4,7 @@ import { languageAlternates, ogLocale } from "@/i18n/config";
 import { format, getDictionary } from "@/i18n/dictionaries";
 import LanguageSwitcher from "./LanguageSwitcher";
 import MobileMenu from "./MobileMenu";
+import { instagram, SocialIcon, socialLinks } from "./social";
 import { getLocale } from "./locale";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]">): Promise<Metadata> {
@@ -15,29 +16,6 @@ export async function generateMetadata({ params }: PageProps<"/[lang]">): Promis
         alternates: { canonical: `/${lang}`, languages: languageAlternates("") },
         openGraph: { title: meta.title, description: meta.description, locale: ogLocale[lang] },
     };
-}
-
-const socialLinks = [
-    { label: "Facebook", href: "https://www.facebook.com/p/House-of-Mambo-Bergen-61592891530613/" },
-    { label: "Instagram", href: "https://www.instagram.com/houseofmambo_bergen/" },
-];
-
-function SocialIcon({ platform, className = "size-4" }: { platform: string; className?: string }) {
-    if (platform === "Facebook") {
-        return (
-            <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M13.7 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5H17V3.7c-.7-.1-1.5-.2-2.3-.2-2.8 0-4.7 1.7-4.7 4.8v1.6H7V13h3v8h3.7Z" />
-            </svg>
-        );
-    }
-
-    return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-            <rect x="3" y="3" width="18" height="18" rx="5" />
-            <circle cx="12" cy="12" r="4" />
-            <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none" />
-        </svg>
-    );
 }
 
 function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
@@ -73,7 +51,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                         <a href={`/${lang}/registration`} className="btn-primary btn-small">{common.courseSignup}</a>
                         <div className="flex items-center gap-2">
                             {socialLinks.map((social) => (
-                                <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="social-link" aria-label={socialAria(social.label)}><SocialIcon platform={social.label} /></a>
+                                <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="social-link" aria-label={socialAria(social.label)}><SocialIcon platform={social.label} className="size-5" /></a>
                             ))}
                         </div>
                     </div>
@@ -137,8 +115,14 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
                     <div className="mt-9 flex flex-col items-start gap-4 border border-white/8 bg-surface/65 px-4 py-4 text-xs font-semibold uppercase leading-5 tracking-[0.1em] text-text-main/60 m:flex-row m:flex-wrap m:items-center m:justify-between m:gap-x-6 m:gap-y-3">
                         <span className="text-gold-bronze">{hero.follow}</span>
-                        <div className="grid w-full grid-cols-2 gap-3 m:flex m:w-auto m:flex-wrap m:gap-5">
-                            {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 border border-white/8 px-3 text-gold-champagne transition-colors hover:text-gold-main m:min-h-0 m:border-0 m:px-0"><SocialIcon platform={social.label} className="size-4" />{social.label} ↗</a>)}
+                        <div className="grid w-full gap-3 sm:grid-cols-2 m:flex m:w-auto m:flex-wrap">
+                            {socialLinks.map((social) => (
+                                <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="group/social inline-flex min-h-12 items-center gap-3 border border-gold-main/60 bg-black/40 px-4 py-2 text-gold-champagne transition-colors hover:border-gold-main hover:bg-gold-main hover:text-background focus-visible:bg-gold-main focus-visible:text-background">
+                                    <SocialIcon platform={social.label} className="size-5 shrink-0" />
+                                    <span className="flex flex-col leading-4"><span>{social.label} ↗</span><span className="text-[0.7rem] font-medium normal-case tracking-[0.04em] text-text-main/70 group-hover/social:text-background group-focus-visible/social:text-background">{social.handle}</span></span>
+                                    <span className="sr-only">{common.newTab}</span>
+                                </a>
+                            ))}
                         </div>
                         <span>{hero.followTags}</span>
                     </div>
@@ -210,14 +194,19 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                         <div>
                             <SectionHeading eyebrow={club.eyebrow} title={club.title} />
                             <p className="mt-6 max-w-xl text-base leading-7 text-text-main/58">{club.intro}</p>
-                            <figure className="relative mt-7 aspect-[4/5] overflow-hidden border border-white/8 bg-black sm:aspect-[16/10]">
-                                <Image src="/mambo-dance-main.webp" alt={club.imageAlt} fill loading="eager" quality={70} sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) calc(100vw - 4rem), 552px" className="object-cover object-[center_58%]" />
+                            <a href={instagram.href} target="_blank" rel="noreferrer" className="group mt-7 block border border-white/8 transition-colors hover:border-gold-main/70 focus-visible:border-gold-main">
+                            <figure className="relative aspect-[4/5] overflow-hidden bg-black sm:aspect-[16/10]">
+                                <Image src="/mambo-dance-main.webp" alt={club.imageAlt} fill loading="eager" quality={70} sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) calc(100vw - 4rem), 552px" className="object-cover object-[center_58%] transition-transform duration-700 group-hover:scale-[1.03]" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/10" aria-hidden="true" />
+                                <span className="absolute right-4 top-4 inline-flex min-h-11 items-center gap-2 border border-gold-main/60 bg-black/75 px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-gold-champagne backdrop-blur-sm transition-colors group-hover:bg-gold-main group-hover:text-background group-focus-visible:bg-gold-main group-focus-visible:text-background">
+                                    <SocialIcon platform={instagram.label} className="size-4" />{club.imageSocialCta} ↗<span className="sr-only">{common.newTab}</span>
+                                </span>
                                 <figcaption className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-3 p-5 sm:flex-row sm:items-end sm:justify-between">
                                     <div><p className="micro-label text-gold-champagne/70">{club.imageEyebrow}</p><p className="font-bebas text-xl tracking-[0.08em] text-text-main">{club.imageAddress}</p></div>
                                     <p className="font-bebas text-2xl tracking-[0.04em] text-gold-main">{club.imageBadge}</p>
                                 </figcaption>
                             </figure>
+                            </a>
                             <div className="mt-5 grid gap-4 sm:grid-cols-2">
                                 {club.features.map((feature) => <div key={feature.title} className="border border-white/7 bg-surface/55 p-5"><p className="micro-label">{feature.label}</p><h3 className="mt-2 text-sm font-semibold uppercase tracking-[0.09em] text-text-main/85">{feature.title}</h3><p className="mt-2 text-sm leading-6 text-text-main/60">{feature.text}</p></div>)}
                             </div>
@@ -258,7 +247,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                     <div className="grid gap-6 border border-white/8 bg-[#252525] p-5 m:p-8 l:grid-cols-[1.15fr_0.85fr] l:items-center">
                     <div><p className="micro-label">{contact.eyebrow}</p><h2 className="font-bebas text-3xl tracking-[0.055em] text-text-main">{contact.title}</h2><p className="mt-2 text-base leading-7 text-text-main/68">{contact.text}</p></div>
                     <div className="grid gap-3 sm:grid-cols-2">
-                        {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="btn-primary inline-flex min-h-12 items-center justify-center gap-2 text-center"><SocialIcon platform={social.label} className="size-5" />{social.label} ↗</a>)}
+                        {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="btn-primary inline-flex min-h-14 flex-col items-center justify-center gap-1 text-center"><span className="inline-flex items-center gap-2"><SocialIcon platform={social.label} className="size-5" />{social.label} ↗</span><span className="text-[0.7rem] normal-case tracking-[0.04em] opacity-80">{social.handle}</span><span className="sr-only">{common.newTab}</span></a>)}
                     </div>
                 </div>
 
@@ -268,13 +257,13 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                             <Image src="/images/house-of-mambo-logo.webp" alt={common.logoAlt} width={600} height={408} sizes="(max-width: 767px) 128px, 160px" className="h-auto w-32 object-contain m:w-40" />
                             <p className="micro-label mt-4 text-gold-champagne/75">{footer.name}</p>
                             <p className="mt-5 max-w-[16rem] text-sm leading-6 text-text-main/60">{footer.about}</p>
-                            <div className="mt-5 flex gap-2">{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="social-link" aria-label={socialAria(social.label)}><SocialIcon platform={social.label} /></a>)}</div>
+                            <div className="mt-5 flex gap-2">{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="social-link" aria-label={socialAria(social.label)}><SocialIcon platform={social.label} className="size-5" /></a>)}</div>
                         </div>
                         {footer.groups.map((group) => <div key={group.title}><h3 className="micro-label text-gold-main">{group.title}</h3><ul className="mt-4 space-y-2">{group.items.map((item) => <li key={item} className="text-sm leading-6 text-text-main/60">{item}</li>)}</ul></div>)}
                     </div>
                     <div className="flex flex-col justify-between gap-4 py-7 text-xs font-semibold uppercase tracking-[0.1em] text-text-main/75 m:flex-row">
                         <p>{footer.companyCopyright}</p>
-                        <div className="flex flex-wrap gap-5"><a href={`/${lang}/registration`} className="hover:text-gold-champagne">{common.courseSignup}</a><a href={`/${lang}/privacy`} className="hover:text-gold-champagne">{common.privacy}</a>{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-gold-champagne"><SocialIcon platform={social.label} className="size-3" />{social.label}</a>)}</div>
+                        <div className="flex flex-wrap gap-5"><a href={`/${lang}/registration`} className="hover:text-gold-champagne">{common.courseSignup}</a><a href={`/${lang}/privacy`} className="hover:text-gold-champagne">{common.privacy}</a>{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-gold-champagne"><SocialIcon platform={social.label} className="size-4" />{social.label}</a>)}</div>
                     </div>
                     <div className="flex flex-col justify-between gap-3 border-t border-white/8 pt-7 text-text-main/75 m:flex-row m:items-end">
                         <div><p className="font-bebas text-xl tracking-[0.04em] text-gold-main">House of Mambo</p><p className="mt-1 text-xs leading-5 tracking-[0.1em]">{footer.brandLine}</p></div>
