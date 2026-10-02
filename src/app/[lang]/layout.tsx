@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, Bebas_Neue } from "next/font/google";
-import "./globals.css";
+import { htmlLang, locales } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
+import { getLocale } from "./locale";
+import "../globals.css";
 
 // 1. Laster inn Mambo-fontene med riktige variabler (som matcher globals.css)
 const inter = Inter({
@@ -21,22 +24,27 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-    title: "House of Mambo | Bergen",
-    description: "Salsa On2 og mambo i Bergen – kurs, workshops, social dancing og et inkluderende dansemiljø.",
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
 };
 
-export default function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+// Kun språkene i config er gyldige – alt annet gir 404
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+    return locales.map((lang) => ({ lang }));
+}
+
+export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
+    const lang = await getLocale(params);
+    const dict = await getDictionary(lang);
+
     return (
         <html
-            lang='en'
+            lang={htmlLang[lang]}
             className={`${inter.variable} ${montserrat.variable} ${bebasNeue.variable} h-full antialiased`}
         >
             <body className='min-h-full flex flex-col'>
-                <a className="skip-link" href="#main-content">Skip to main content</a>
+                <a className="skip-link" href="#main-content">{dict.common.skipLink}</a>
                 {children}
             </body>
         </html>

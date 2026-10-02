@@ -1,0 +1,267 @@
+{
+    "common": {
+        "skipLink": "Hopp til hovedinnhold",
+        "homeAria": "House of Mambo forside",
+        "logoAlt": "House of Mambo Bergen",
+        "courseSignup": "Kurspåmelding",
+        "socialAria": "House of Mambo på {platform}",
+        "privacy": "Personvern",
+        "copyright": "© 2026 House of Mambo Bergen. Alle rettigheter forbeholdt.",
+        "language": {
+            "label": "Velg språk",
+            "switchTo": "Bytt språk til {language}",
+            "names": { "no": "Norsk", "en": "English" }
+        }
+    },
+    "navigation": [
+        { "label": "Kurs", "href": "#classes" },
+        { "label": "Arrangementer", "href": "#events" },
+        { "label": "Klubben", "href": "#club" },
+        { "label": "Om oss", "href": "#about" },
+        { "label": "Kontakt", "href": "#contact" }
+    ],
+    "mobileMenu": {
+        "open": "Åpne meny",
+        "close": "Lukk meny",
+        "label": "Mobilmeny"
+    },
+    "home": {
+        "meta": {
+            "title": "House of Mambo | Bergen",
+            "description": "Salsa On2 og mambo i Bergen – kurs, workshops, social dancing og et inkluderende dansemiljø."
+        },
+        "mainNavLabel": "Hovedmeny",
+        "hero": {
+            "tagline": "◆ Inkluderende salsa- og mambomiljø · Bergen",
+            "taglineSecondary": "Kurs · workshops · social dancing",
+            "subtitle": "Bergen",
+            "motto": "The Mambo is alive",
+            "intro": "Et inkluderende og inspirerende miljø for Salsa On2 og mambo i Bergen. Lær grunnlaget, utvikle musikaliteten, voks gjennom pardans og bli en del av det sosiale dansegulvet.",
+            "exploreClasses": "Se kursene",
+            "facts": [
+                { "term": "Trening", "value": "Salsa On2 / Mambo" },
+                { "term": "Nivåer", "value": "Nybegynner til viderekommen" },
+                { "term": "Miljø", "value": "Kurs · socials · showteams" }
+            ],
+            "cards": [
+                {
+                    "alt": "Salsadansere i House of Mambo-klubben",
+                    "badge": "Salsa On2",
+                    "title": "Bevegelse og kontakt",
+                    "text": "Utvikle timing, musikalitet, kroppsbevegelse og partnerkontakt i et trygt og støttende treningsmiljø."
+                },
+                {
+                    "alt": "Dansegulvet og loungen hos House of Mambo",
+                    "badge": "Dansegulvet",
+                    "title": "Lær, dans, høre til",
+                    "text": "Faste kurs, helgeworkshops, sosiale dansefester og showteams samler mambomiljøet i Bergen."
+                }
+            ],
+            "follow": "● Følg House of Mambo:",
+            "followTags": "Kurs ◆ Workshops ◆ Socials ◆ Showteams"
+        },
+        "highlights": [
+            {
+                "number": "01",
+                "title": "Mambo On2",
+                "subtitle": "Pardans for alle nivåer",
+                "description": "Kurs for nybegynnere, lett viderekomne og viderekomne med fokus på timing, kontakt og trygghet på dansegulvet."
+            },
+            {
+                "number": "02",
+                "title": "Solotrening",
+                "subtitle": "Fotarbeid, musikalitet og bevegelse",
+                "description": "Trening på åpent nivå som utvikler shines, musikalsk tolkning og naturlig kroppsbevegelse."
+            },
+            {
+                "number": "03",
+                "title": "Fellesskap",
+                "subtitle": "Socials, workshops og showteams",
+                "description": "Et inkluderende dansemiljø i Bergen der folk trener, blir kjent, opptrer og nyter musikken sammen."
+            }
+        ],
+        "events": {
+            "eyebrow": "Ukentlig trening i Bergen",
+            "title": "Kurs og fellesskap",
+            "intro": "Velg pardans eller solotrening, bygg ferdighetene uke for uke, og ta med deg det du lærer ut på det sosiale dansegulvet.",
+            "offerings": [
+                {
+                    "schedule": "Mandag",
+                    "icon": "♛",
+                    "title": "Mambo pardans",
+                    "subtitle": "Lett viderekommen og viderekommen",
+                    "description": "Bygg sterkere timing, partnerkontakt, turmønstre og trygghet på dansegulvet med Elias på Bergen Internasjonale Kultursenter.",
+                    "action": "Meld interesse",
+                    "meta": "19:15 og 20:30"
+                },
+                {
+                    "schedule": "Tirsdag",
+                    "icon": "♟",
+                    "title": "Fotarbeid og musikalitet",
+                    "subtitle": "Solokurs på åpent nivå",
+                    "description": "Tren shines, musikalitet og kroppsbevegelse med Alberto. Anbefales for dansere med minst tre måneders salsaerfaring.",
+                    "action": "Meld interesse",
+                    "meta": "19:00 — 20:00"
+                },
+                {
+                    "schedule": "Onsdag",
+                    "icon": "♜",
+                    "title": "Mambo nybegynner",
+                    "subtitle": "Grunnleggende pardans",
+                    "description": "Lær det grunnleggende i Salsa On2, føring og følging, og verktøyene du trenger for å føle deg komfortabel på det sosiale dansegulvet.",
+                    "action": "Meld interesse",
+                    "meta": "19:00 — 20:00"
+                }
+            ],
+            "timetableEyebrow": "Nåværende 8-ukers kursperiode",
+            "timetableTitle": "Ukentlig kursplan",
+            "registrationOpen": "● Påmeldingen er åpen",
+            "timetable": [
+                { "time": "19:15", "title": "Mandag · Mambo pardans lett viderekommen", "detail": "On2-pardans med Elias", "place": "Bergen Internasjonale Kultursenter", "status": "8 uker" },
+                { "time": "20:30", "title": "Mandag · Mambo pardans viderekommen", "detail": "On2-pardans med Elias", "place": "Bergen Internasjonale Kultursenter", "status": "8 uker" },
+                { "time": "19:00", "title": "Tirsdag · Fotarbeid, musikalitet og kroppsbevegelse", "detail": "Solotrening på åpent nivå med Alberto", "place": "Forandringshuset V13", "status": "8 uker" },
+                { "time": "19:00", "title": "Onsdag · Mambo pardans nybegynner", "detail": "Grunnleggende On2-pardans med Elias", "place": "Forandringshuset V13", "status": "8 uker" }
+            ]
+        },
+        "join": {
+            "eyebrow": "Kurspåmelding",
+            "title": "Klar for å bli med?",
+            "text": "Velg kurs og send inn opplysningene dine på påmeldingssiden. Skjemaet er klart for kobling mot Google Sheets når dere ønsker det.",
+            "cta": "Gå til påmelding →"
+        },
+        "club": {
+            "eyebrow": "Mer enn ukentlige kurs",
+            "title": "Dansemiljøet i Bergen",
+            "intro": "House of Mambo skaper et inkluderende og inspirerende miljø for Salsa On2 og mambo i Bergen. De faste kursene suppleres av helgeworkshops, sosiale dansefester og showteams der danserne kan fortsette å utvikle seg sammen.",
+            "imageAlt": "Den store dansesalen og loungen hos House of Mambo",
+            "imageEyebrow": "Kurs tirsdag og onsdag",
+            "imageAddress": "Forandringshuset V13, 5017 Bergen",
+            "imageBadge": "Salsa On2",
+            "features": [
+                { "label": "Trening", "title": "Ukentlige On2-kurs", "text": "Nybegynner, lett viderekommen, viderekommen og solotrening på åpent nivå." },
+                { "label": "Fellesskap", "title": "Workshops og socials", "text": "Helgetrening, sosiale dansefester og showteams." }
+            ],
+            "pricing": {
+                "title": "♙ Kurspåmelding",
+                "subtitle": "Ett komplett 8-ukers kurs",
+                "price": "NOK 990",
+                "perCourse": "/kurs",
+                "details": [
+                    "Ett komplett 8-ukers kurs",
+                    "NOK 690 for heltidsstudenter",
+                    "Rabatterte pakker ved påmelding til flere kurs",
+                    "Påmeldingsavgift på NOK 50 er inkludert i kursprisen"
+                ],
+                "cta": "Gå til påmelding"
+            },
+            "info": {
+                "eyebrow": "Informasjon om nåværende kurs",
+                "season": "Høsten 2026",
+                "periodTitle": "Kursperiode",
+                "periodText": "Mandag 24. august — onsdag 28. oktober",
+                "periodBadge": "8 uker",
+                "beforeTitle": "Før kurset",
+                "beforeText": "Kom gjerne 5 minutter før kurset starter.",
+                "beforeBadge": "Velkommen"
+            },
+            "quote": "The Mambo is alive. Kom og lær, dans, og hjelp oss å bygge On2-miljøet i Bergen sammen.",
+            "quoteAuthor": "— House of Mambo Bergen"
+        },
+        "contact": {
+            "eyebrow": "Hold deg oppdatert",
+            "title": "Følg kurs, workshops og socials",
+            "text": "Følg House of Mambo for påmeldingsnyheter, ukentlige kursoppdateringer, workshops, sosiale dansefester og høydepunkter fra miljøet."
+        },
+        "footer": {
+            "name": "House of Mambo Bergen",
+            "about": "Et inkluderende og inspirerende miljø for Salsa On2, mambo, workshops, socials og showteams i Bergen.",
+            "groups": [
+                { "title": "Kurs", "items": ["Mambo On2 pardans", "Fotarbeid og musikalitet", "Kroppsbevegelse", "Nybegynner til viderekommen"] },
+                { "title": "Ukeplan", "items": ["Mandag: 19:15 og 20:30", "Tirsdag: 19:00", "Onsdag: 19:00", "Kom 5 minutter før kursstart"] },
+                { "title": "Fellesskap", "items": ["Faste kurs", "Helgeworkshops", "Sosiale dansefester", "Showteams"] }
+            ],
+            "companyCopyright": "© 2026 House of Mambo Bergen AS. Alle rettigheter forbeholdt.",
+            "brandLine": "Bergen · Salsa On2 · Kurs · Workshops · Fellesskap"
+        }
+    },
+    "registration": {
+        "meta": {
+            "title": "Kurspåmelding | House of Mambo Bergen",
+            "description": "Meld interesse for kurs i Salsa On2 og mambo hos House of Mambo i Bergen."
+        },
+        "back": "← Forsiden",
+        "eyebrow": "House of Mambo Bergen",
+        "title": "Kurspåmelding",
+        "intro": "Velg kurset som passer ditt nivå og fortell oss litt om danseerfaringen din. Vi tar kontakt om ledige plasser og veien videre.",
+        "notesTitle": "Om påmeldingen",
+        "notes": [
+            "Ett komplett 8-ukers kurs koster NOK 990.",
+            "Pris for heltidsstudenter er NOK 690.",
+            "Pardanskurs kan ha venteliste for å balansere førere og følgere.",
+            "Plassen din er bekreftet når du har fått svar fra House of Mambo."
+        ],
+        "helpTitle": "Usikker på hvilket kurs?",
+        "helpText": "Velg kurset som ligger nærmest ditt nivå, og bruk meldingsfeltet til å fortelle hva du har danset før. Vi hjelper deg å finne riktig kurs.",
+        "privacyLink": "Personvern",
+        "homeLink": "House of Mambo forside"
+    },
+    "form": {
+        "courses": [
+            "Mambo pardans — lett viderekommen",
+            "Mambo pardans — viderekommen",
+            "Fotarbeid, musikalitet og kroppsbevegelse",
+            "Mambo pardans — nybegynner"
+        ],
+        "experienceLevels": ["Jeg er helt ny", "Mindre enn 3 måneder", "3–12 måneder", "1–3 år", "Mer enn 3 år"],
+        "danceRoles": ["Fører", "Følger", "Begge", "Usikker"],
+        "labels": {
+            "fullName": "Fullt navn",
+            "email": "E-postadresse",
+            "phone": "Telefonnummer",
+            "course": "Kurs",
+            "experience": "Salsaerfaring",
+            "danceRole": "Foretrukket danserolle",
+            "message": "Noe vi bør vite?"
+        },
+        "placeholders": {
+            "fullName": "Ditt fulle navn",
+            "email": "navn@eksempel.no",
+            "phone": "+47 000 00 000",
+            "course": "Velg kurs",
+            "experience": "Velg erfaring",
+            "danceRole": "Velg rolle",
+            "message": "Spørsmål, informasjon om dansepartner, tilretteleggingsbehov eller annet du vil dele."
+        },
+        "errors": {
+            "summary": "Rett opp feltene som er markert.",
+            "fullName": "Skriv inn fullt navn.",
+            "email": "Skriv inn e-postadressen din.",
+            "emailInvalid": "Skriv inn en gyldig e-postadresse.",
+            "phone": "Skriv inn telefonnummeret ditt.",
+            "course": "Velg et kurs.",
+            "experience": "Velg erfaringsnivå.",
+            "danceRole": "Velg foretrukket danserolle.",
+            "consent": "Du må samtykke før du kan melde deg på."
+        },
+        "consentBefore": "Jeg samtykker i at House of Mambo kan bruke disse opplysningene til å kontakte meg om kurs og påmelding. Les vår",
+        "consentLink": "personvernerklæring",
+        "submit": "Meld interesse",
+        "confirmationNote": "Plassen din er først bekreftet når du har fått svar fra House of Mambo.",
+        "previewNotice": "Kursskjemaet er klart. Ingen opplysninger ble sendt fordi koblingen til Google Forms legges til senere."
+    },
+    "privacy": {
+        "meta": {
+            "title": "Personvern | House of Mambo Bergen",
+            "description": "Slik behandler House of Mambo Bergen opplysninger fra kurspåmelding."
+        },
+        "back": "← Kurspåmelding",
+        "eyebrow": "House of Mambo Bergen",
+        "title": "Personvern",
+        "sections": [
+            { "title": "Opplysninger vi samler inn", "text": "Når du melder interesse, samler vi inn kontaktinformasjon, kursvalg, danseerfaring, danserolle og eventuell melding du skriver." },
+            { "title": "Hvordan de brukes", "text": "Vi bruker opplysningene kun til å svare på henvendelsen din, hjelpe deg å velge riktig kurs, holde oversikt over ledige plasser og kontakte deg om påmeldingen." },
+            { "title": "Lagring og sletting", "text": "Påmeldingsopplysninger lagres i den tilkoblede Google-tjenesten når skjemakoblingen er aktivert. Kontakt House of Mambo hvis du vil se, rette eller slette opplysninger du har sendt inn." },
+            { "title": "Før skjemaet lanseres", "text": "Påmeldingsskjemaet er foreløpig i forhåndsvisning og sender eller lagrer ingen opplysninger. Denne siden skal oppdateres med kontakt-e-post og endelig lagringstid før skjemaet åpnes for offentligheten." }
+        ]
+    }
+}
