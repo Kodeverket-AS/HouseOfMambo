@@ -22,7 +22,7 @@ const bebasNeue = Bebas_Neue({
 
 export const metadata: Metadata = {
     title: "House of Mambo | Bergen",
-    description: "Salsa On2 og mambo i Bergen – kurs, workshops, social dancing og et inkluderende dansemiljø.",
+    description: "Salsa On2 og mambo i Bergen – kurs, workshops, sosialdans og et inkluderende dansemiljø.",
 };
 
 export default function RootLayout({
@@ -32,11 +32,11 @@ export default function RootLayout({
 }>) {
     return (
         <html
-            lang='en'
+            lang='no'
             className={`${inter.variable} ${montserrat.variable} ${bebasNeue.variable} h-full antialiased`}
         >
             <body className='min-h-full flex flex-col'>
-                <a className="skip-link" href="#main-content">Skip to main content</a>
+                <a className="skip-link" href="#main-content">Hopp til hovedinnhold</a>
                 {children}
             </body>
         </html>
