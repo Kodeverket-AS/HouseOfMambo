@@ -1,10 +1,12 @@
 import Image from "next/image";
 import MobileMenu from "./MobileMenu";
+import MamboCarousel from "./MamboCarousel";
 import SocialIcon from "./SocialIcon";
 
 const navigation = [
     { label: "Kurs", href: "#classes" },
     { label: "Arrangementer", href: "#events" },
+    { label: "Galleri", href: "#gallery" },
     { label: "Fellesskapet", href: "#club" },
     { label: "Om oss", href: "#about" },
     { label: "Kontakt", href: "#contact" },
@@ -307,6 +309,16 @@ export default function Home() {
                             </article>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            <section id="gallery" className="overflow-hidden border-b border-white/7 bg-[#11070b]">
+                <div className="site-container section-space">
+                    <div className="mb-10 flex flex-col justify-between gap-5 l:flex-row l:items-end">
+                        <SectionHeading eyebrow="Lys, rytme og ekte øyeblikk" title="Inne i House of Mambo" />
+                        <p className="max-w-md text-base leading-7 text-text-main/70 l:text-right">Et lite glimt av menneskene, musikken og energien som fyller dansegulvet. Dra på mobil eller bruk pilene for å utforske.</p>
+                    </div>
+                    <MamboCarousel />
                 </div>
             </section>
 
