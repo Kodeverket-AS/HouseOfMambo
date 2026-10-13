@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, Bebas_Neue } from "next/font/google";
+import LanguageSwitcher from "./LanguageSwitcher";
 import "./globals.css";
 
 // 1. Laster inn Mambo-fontene med riktige variabler (som matcher globals.css)
@@ -37,6 +38,7 @@ export default function RootLayout({
         >
             <body className='min-h-full flex flex-col'>
                 <a className="skip-link" href="#main-content">Hopp til hovedinnhold</a>
+                <LanguageSwitcher />
                 {children}
             </body>
         </html>
