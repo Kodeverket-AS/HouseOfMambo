@@ -6,15 +6,31 @@ type SocialIconProps = {
 export default function SocialIcon({ platform, className = "size-5" }: SocialIconProps) {
     if (platform === "Facebook") {
         return (
-            <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.79-4.7 4.53-4.7 1.31 0 2.69.24 2.69.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07Z" />
+            <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="12" fill="#1877F2" />
+                <path
+                    fill="#fff"
+                    d="M13.55 20v-7h2.35l.35-2.73h-2.7V8.53c0-.79.22-1.33 1.36-1.33h1.45V4.76a19.4 19.4 0 0 0-2.12-.11c-2.1 0-3.54 1.28-3.54 3.64v1.98H8.32V13h2.38v7h2.85Z"
+                />
             </svg>
         );
     }
 
     return (
-        <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.65 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" />
+        <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
+            <defs>
+                <linearGradient id="instagram-gradient" x1="3" y1="21" x2="21" y2="3" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stopColor="#FEDA75" />
+                    <stop offset="0.28" stopColor="#FA7E1E" />
+                    <stop offset="0.52" stopColor="#D62976" />
+                    <stop offset="0.75" stopColor="#962FBF" />
+                    <stop offset="1" stopColor="#4F5BD5" />
+                </linearGradient>
+            </defs>
+            <rect width="24" height="24" rx="6.5" fill="url(#instagram-gradient)" />
+            <rect x="5.35" y="5.35" width="13.3" height="13.3" rx="4.15" fill="none" stroke="#fff" strokeWidth="1.8" />
+            <circle cx="12" cy="12" r="3.15" fill="none" stroke="#fff" strokeWidth="1.8" />
+            <circle cx="16.75" cy="7.45" r="1.05" fill="#fff" />
         </svg>
     );
 }
